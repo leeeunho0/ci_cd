@@ -18,11 +18,16 @@ on: [push]
 #   - 내 github 에 가서 자바 코드와 gradle 파일들을 가져와!
 jobs:
   build:
+  # Git 허브가 제공하는 리눅스 컴퓨터 사용
     runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v6
-        - uses: actions/setup-java@v4
-          with:
-            distribution: temurin
-            java-version: '17'
-          -run: bash gradlew bootJar
+    # 작업할 일
+    steps:
+        # 깃허브 저장소에서 코드 가져오기
+      - uses: actions/checkout@v6
+
+        # 자바 설치
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+        -run: bash gradlew bootJar
