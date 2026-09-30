@@ -30,4 +30,4 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-        -run: bash gradlew bootJar
+      - run: bash gradlew bootJar
